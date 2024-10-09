@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RealEstateAgency.ApplicationData;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,10 +11,9 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace RealEstateAgency
+namespace RealEstateAgency.PageApplication
 {
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
@@ -23,6 +23,10 @@ namespace RealEstateAgency
         public MainWindow()
         {
             InitializeComponent();
+            AppConnect.modelOdb = new ReaEntities();
+            AppFrame.FrmMain = frameMain;
+
+            frameMain.Navigate(new PageApplication.PageAuthorization.Entrance());
         }
     }
 }

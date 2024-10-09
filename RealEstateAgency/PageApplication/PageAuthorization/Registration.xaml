@@ -1,0 +1,27 @@
+﻿<Page x:Class="RealEstateAgency.PageApplication.PageAuthorization.Registration"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:RealEstateAgency.PageApplication.PageAuthorization"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Registration">
+
+    <Grid Margin="10,0,0,0">
+        <StackPanel Margin="276,16,276,16">
+            <Label Content="Регистрация" FontSize="22" Height="39" Width="135"/>
+            <Label Content="Логин" HorizontalAlignment="Center" Margin="5" Height="24" Width="134"/>
+            <TextBox x:Name="txbLogin" HorizontalAlignment="Center" Margin="5" Width="137" Height="35" Background="LightYellow"/>
+
+            <Label Content="Пароль" HorizontalAlignment="Center" Margin="5" Height="24" Width="134"/>
+            <TextBox x:Name="txbPass" HorizontalAlignment="Center" Margin="5" Width="137" Height="35" Background="LightYellow"/>
+
+            <Label Content="Повтор пароля" HorizontalAlignment="Center" Margin="5" Height="24" Width="134"/>
+            <PasswordBox x:Name="psbPass" HorizontalAlignment="Center" Margin="5" Width="137" Height="35" Background="LightYellow"/>
+
+            <Button x:Name="RegBtn" Height="25" Width="140" Margin="10" Content="Зарегистрироваться" Click="RegBtn_Click" Background="LightGreen"/>
+            <Button x:Name="Back" Height="25" Width="140" Content="Назад" Click="Back_Click" Background="Firebrick"/>
+        </StackPanel>
+    </Grid>
+</Page>
