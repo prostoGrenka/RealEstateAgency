@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RealEstateAgency.PageApplication"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid Margin="0,0,0,-6">
+        ResizeMode="NoResize"
+        Title="MainWindow" Height="640" Width="900" >
+    <Grid Margin="0,0,-25,-6">
         <Grid.RowDefinitions>
             <RowDefinition Height="75*" />
             <RowDefinition Height="359*"/>
@@ -15,6 +16,6 @@
         <TextBlock HorizontalAlignment="Center" Text="Агент Евгешка" FontSize="52" Height="76" Grid.Row="0"/>
 
 
-        <Frame Name="frameMain" NavigationUIVisibility="Hidden" Margin="10,0,10,0" Grid.Row="1" Height="543" VerticalAlignment="Center"/>
+        <Frame Name="frameMain" NavigationUIVisibility="Hidden" Margin="10,0,10,0" Grid.Row="1" Height="502" VerticalAlignment="Center"/>
     </Grid>
 </Window>

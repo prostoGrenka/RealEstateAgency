@@ -26,6 +26,8 @@ namespace RealEstateAgency.PageApplication.PageAuthorization
         public Registration()
         {
             InitializeComponent();
+
+
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
@@ -35,6 +37,7 @@ namespace RealEstateAgency.PageApplication.PageAuthorization
 
         private void RegBtn_Click(object sender, RoutedEventArgs e)
         {
+            
             if (AppConnect.modelOdb.User.Count(x => x.Login == txbLogin.Text) > 0)
             {
                 MessageBox.Show("Пользователь с таким логином уже есть!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);

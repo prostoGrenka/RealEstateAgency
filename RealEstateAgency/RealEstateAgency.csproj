@@ -121,11 +121,27 @@
     <Compile Include="ApplicationData\ViewRealt.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Page Include="PageApplication\FiltreWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PageApplication\MainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PageApplication\PageAdmin\AdminPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageApplication\PageAdmin\PageAddData.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageApplication\PageAdmin\PageEditData.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageApplication\PageAdmin\PageInfoUser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -139,11 +155,23 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PageApplication\FiltreWindow.xaml.cs">
+      <DependentUpon>FiltreWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PageApplication\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="PageApplication\PageAdmin\AdminPage.xaml.cs">
       <DependentUpon>AdminPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageApplication\PageAdmin\PageAddData.xaml.cs">
+      <DependentUpon>PageAddData.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageApplication\PageAdmin\PageEditData.xaml.cs">
+      <DependentUpon>PageEditData.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageApplication\PageAdmin\PageInfoUser.xaml.cs">
+      <DependentUpon>PageInfoUser.xaml</DependentUpon>
     </Compile>
     <Compile Include="PageApplication\PageAuthorization\Entrance.xaml.cs">
       <DependentUpon>Entrance.xaml</DependentUpon>

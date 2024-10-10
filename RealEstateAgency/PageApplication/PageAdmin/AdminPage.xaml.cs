@@ -24,12 +24,10 @@ namespace RealEstateAgency.PageApplication.PageAdmin
         public AdminPage()
         {
             InitializeComponent();
-            if ()
-            {
-                List<RealtyFlat> products = AppConnect.modelOdb.RealtyFlat.ToList();
-                var currentProduct = ReaEntities.GetContext().RealtyFlat.ToList();
-                listProducts.ItemsSource = currentProduct;
-            }
+
+             List<RealtyFlat> products = AppConnect.modelOdb.RealtyFlat.ToList();
+            var currentProduct = ReaEntities.GetContext().RealtyFlat.ToList();
+            listProducts.ItemsSource = currentProduct;
 
 
             Downloads();
@@ -48,8 +46,8 @@ namespace RealEstateAgency.PageApplication.PageAdmin
                 tbCounter.Text = "Ничего не найдено";
             }
             listProducts.ItemsSource = productBunAndBagel;
-            comboSort.Items.Add("По вохврастанию товаров на складе");
-            comboSort.Items.Add("По уменьшению товаров на складе");
+            //comboSort.Items.Add("По вохврастанию товаров на складе");
+            //comboSort.Items.Add("По уменьшению товаров на складе");
         }
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
@@ -62,10 +60,10 @@ namespace RealEstateAgency.PageApplication.PageAdmin
                 {
                     try
                     {
-                        ReaEntities.GetContext().ProductBunAndBagel.RemoveRange(selectedProduct);
+                        ReaEntities.GetContext().RealtyFlat.RemoveRange(selectedProduct);
                         ReaEntities.GetContext().SaveChanges();
                         MessageBox.Show("Данные удалены");
-                        listProducts.ItemsSource = ReaEntities.GetContext().ProductBunAndBagel.ToList();
+                        listProducts.ItemsSource = ReaEntities.GetContext().RealtyFlat.ToList();
                         productBunAndBagel = AppConnect.modelOdb.RealtyFlat.ToList();
 
                         if (productBunAndBagel.Count > 0)
@@ -86,7 +84,7 @@ namespace RealEstateAgency.PageApplication.PageAdmin
         }
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            AppFrame.FrmMain.Navigate(new AdminPage.PageAdd());
+            AppFrame.FrmMain.Navigate(new PageAddData());
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -97,22 +95,22 @@ namespace RealEstateAgency.PageApplication.PageAdmin
         {
             List<RealtyFlat> product = AppConnect.modelOdb.RealtyFlat.ToList();
             var productall = product;
-            if (TBoxSearch != null)
-            {
-                product = product.Where(x => x.Name.ToLower().Contains(TBoxSearch.Text.ToLower())).ToList();
-            }
-            if (comboSort.SelectedIndex > 0)
-            {
-                switch (comboSort.SelectedIndex)
-                {
-                    case 0:
-                        product = product.OrderBy(x => x.Quantity).ToList<RealtyFlat>();
-                        break;
-                    case 1:
-                        product = product.OrderByDescending(x => x.Quantity).ToList<RealtyFlat>();
-                        break;
-                }
-            }
+            //if (TBoxSearch != null)
+            //{
+            //    product = product.Where(x => x.Name.ToLower().Contains(TBoxSearch.Text.ToLower())).ToList();
+            //}
+            //if (comboSort.SelectedIndex > 0)
+            //{
+            //    switch (comboSort.SelectedIndex)
+            //    {
+            //        case 0:
+            //            product = product.OrderBy(x => x.Quantity).ToList<RealtyFlat>();
+            //            break;
+            //        case 1:
+            //            product = product.OrderByDescending(x => x.Quantity).ToList<RealtyFlat>();
+            //            break;
+            //    }
+            //}
             if (product.Count > 0)
             {
                 tbCounter.Text = "Найдено " + product.Count + " товаров";
@@ -127,7 +125,7 @@ namespace RealEstateAgency.PageApplication.PageAdmin
 
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
-            AppFrame.FrmMain.Navigate(new AdminPage.PageEdit((sender as Button).DataContext as RealtyFlat));
+            AppFrame.FrmMain.Navigate(new PageEditData((sender as Button).DataContext as RealtyFlat));
         }
 
         private void listProducts_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -137,7 +135,13 @@ namespace RealEstateAgency.PageApplication.PageAdmin
 
         private void btnInfoUser_Click(object sender, RoutedEventArgs e)
         {
-            AppFrame.FrmMain.Navigate(new AdminPage.PageInfoUsers());
+            AppFrame.FrmMain.Navigate(new PageInfoUser());
+        }
+
+        private void filtreForSearch_Click(object sender, RoutedEventArgs e)
+        {
+            FiltreWindow windowForGetFiltre = new FiltreWindow();
+            windowForGetFiltre.ShowDialog();
         }
     }
 }

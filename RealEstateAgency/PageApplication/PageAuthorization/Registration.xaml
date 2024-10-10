@@ -4,12 +4,11 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:RealEstateAgency.PageApplication.PageAuthorization"
-      mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="Registration">
+      mc:Ignorable="d"
+      Title="Registration" Width="265" Height="385">
 
     <Grid Margin="10,0,0,0">
-        <StackPanel Margin="276,16,276,16">
+        <StackPanel Margin="5,0,5,10">
             <Label Content="Регистрация" FontSize="22" Height="39" Width="135"/>
             <Label Content="Логин" HorizontalAlignment="Center" Margin="5" Height="24" Width="134"/>
             <TextBox x:Name="txbLogin" HorizontalAlignment="Center" Margin="5" Width="137" Height="35" Background="LightYellow"/>

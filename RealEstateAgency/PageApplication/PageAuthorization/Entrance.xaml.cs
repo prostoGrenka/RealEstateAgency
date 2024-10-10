@@ -1,4 +1,5 @@
 ﻿using RealEstateAgency.ApplicationData;
+using RealEstateAgency.PageApplication.PageAdmin;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,11 +43,11 @@ namespace RealEstateAgency.PageApplication.PageAuthorization
                     {
                         case 1:
                             MessageBox.Show("Здравствуйте, Администратор " + userObj.Login + "!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
-                            AppFrame.FrmMain.Navigate(new MainWindow());
+                            AppFrame.FrmMain.Navigate(new AdminPage());
                             break;
                         case 2:
                             MessageBox.Show("Здравствуйте, Пользователь " + userObj.Login + "!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
-                            AppFrame.FrmMain.Navigate(new MainWindow());
+                            AppFrame.FrmMain.Navigate(new AdminPage());
                             break;
                         default:
                             MessageBox.Show("Данные не обнаружены!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Warning);

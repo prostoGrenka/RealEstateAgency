@@ -15,11 +15,18 @@ namespace RealEstateAgency.ApplicationData
     
     public partial class ReaEntities : DbContext
     {
+
         public ReaEntities()
             : base("name=ReaEntities")
         {
         }
-    
+        private static ReaEntities _Context;
+
+        public static ReaEntities GetContext()
+        {
+            if(_Context == null) _Context = new ReaEntities();
+            return _Context;
+        }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
