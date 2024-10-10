@@ -32,7 +32,6 @@
 
                                 <TextBlock Width="auto" TextWrapping="Wrap" Height="auto"><Run Text="Вид Аренды: "/><Run Text=" "/><Run Text="{Binding Destiny.Destiny1}"/></TextBlock>
                             </StackPanel>
-
                         </StackPanel>
 
                         <Button x:Name="btnDescription" Content="Подробнее" Margin="417,69,146,43" Grid.Column="1" Background="PowderBlue"/>
