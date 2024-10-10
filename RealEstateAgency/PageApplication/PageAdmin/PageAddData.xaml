@@ -16,7 +16,7 @@
         <Label Content="Кол-во комнат" Margin="10,68,689,358"/>
 
         <ComboBox x:Name="floorCombo" Margin="9,220,690,207"/>
-        <Label Content="Кол-во комнат" Margin="11,188,690,235"/>
+        <Label Content="Этаж" Margin="11,188,690,235"/>
 
         <ComboBox x:Name="clientCombo" Margin="11,160,689,267"/>
         <Label Content="Номер договора" Margin="10,130,690,295"/>

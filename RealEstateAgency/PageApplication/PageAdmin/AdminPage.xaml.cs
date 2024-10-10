@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -32,22 +33,20 @@ namespace RealEstateAgency.PageApplication.PageAdmin
 
             Downloads();
         }
-        List<RealtyFlat> productBunAndBagel;
+        List<RealtyFlat> realtyFlats;
         public void Downloads()
         {
-            productBunAndBagel = AppConnect.modelOdb.RealtyFlat.ToList();
+            realtyFlats = AppConnect.modelOdb.RealtyFlat.ToList();
 
-            if (productBunAndBagel.Count > 0)
+            if (realtyFlats.Count > 0)
             {
-                tbCounter.Text = "Найдено " + productBunAndBagel.Count + " товаров";
+                tbCounter.Text = "Найдено " + realtyFlats.Count + " товаров";
             }
             else
             {
                 tbCounter.Text = "Ничего не найдено";
             }
-            listProducts.ItemsSource = productBunAndBagel;
-            //comboSort.Items.Add("По вохврастанию товаров на складе");
-            //comboSort.Items.Add("По уменьшению товаров на складе");
+            listProducts.ItemsSource = realtyFlats;
         }
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
@@ -58,17 +57,18 @@ namespace RealEstateAgency.PageApplication.PageAdmin
             {
                 if (MessageBox.Show("Вы точно хотите удалить выбранный товар?", "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
                 {
+
                     try
                     {
                         ReaEntities.GetContext().RealtyFlat.RemoveRange(selectedProduct);
                         ReaEntities.GetContext().SaveChanges();
                         MessageBox.Show("Данные удалены");
                         listProducts.ItemsSource = ReaEntities.GetContext().RealtyFlat.ToList();
-                        productBunAndBagel = AppConnect.modelOdb.RealtyFlat.ToList();
+                        realtyFlats = AppConnect.modelOdb.RealtyFlat.ToList();
 
-                        if (productBunAndBagel.Count > 0)
+                        if (realtyFlats.Count > 0)
                         {
-                            tbCounter.Text = "Найдено " + productBunAndBagel.Count + " товаров";
+                            tbCounter.Text = "Найдено " + realtyFlats.Count + " товаров";
                         }
                     }
                     catch (Exception ex)
@@ -95,22 +95,7 @@ namespace RealEstateAgency.PageApplication.PageAdmin
         {
             List<RealtyFlat> product = AppConnect.modelOdb.RealtyFlat.ToList();
             var productall = product;
-            //if (TBoxSearch != null)
-            //{
-            //    product = product.Where(x => x.Name.ToLower().Contains(TBoxSearch.Text.ToLower())).ToList();
-            //}
-            //if (comboSort.SelectedIndex > 0)
-            //{
-            //    switch (comboSort.SelectedIndex)
-            //    {
-            //        case 0:
-            //            product = product.OrderBy(x => x.Quantity).ToList<RealtyFlat>();
-            //            break;
-            //        case 1:
-            //            product = product.OrderByDescending(x => x.Quantity).ToList<RealtyFlat>();
-            //            break;
-            //    }
-            //}
+
             if (product.Count > 0)
             {
                 tbCounter.Text = "Найдено " + product.Count + " товаров";

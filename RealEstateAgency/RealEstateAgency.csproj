@@ -133,11 +133,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PageApplication\PageAdmin\OrderInfoPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PageApplication\PageAdmin\PageAddData.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PageApplication\PageAdmin\PageAddUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageApplication\PageAdmin\PageAllUsers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PageApplication\PageAdmin\PageEditData.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageApplication\PageAdmin\PageEditUser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -153,6 +169,22 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PageApplication\PageProfile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageApplication\PlacingOrderPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageApplication\ProductDescriptionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageApplication\UserPage\MainUserPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PageApplication\FiltreWindow.xaml.cs">
@@ -164,11 +196,23 @@
     <Compile Include="PageApplication\PageAdmin\AdminPage.xaml.cs">
       <DependentUpon>AdminPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PageApplication\PageAdmin\OrderInfoPage.xaml.cs">
+      <DependentUpon>OrderInfoPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PageApplication\PageAdmin\PageAddData.xaml.cs">
       <DependentUpon>PageAddData.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PageApplication\PageAdmin\PageAddUser.xaml.cs">
+      <DependentUpon>PageAddUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageApplication\PageAdmin\PageAllUsers.xaml.cs">
+      <DependentUpon>PageAllUsers.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PageApplication\PageAdmin\PageEditData.xaml.cs">
       <DependentUpon>PageEditData.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageApplication\PageAdmin\PageEditUser.xaml.cs">
+      <DependentUpon>PageEditUser.xaml</DependentUpon>
     </Compile>
     <Compile Include="PageApplication\PageAdmin\PageInfoUser.xaml.cs">
       <DependentUpon>PageInfoUser.xaml</DependentUpon>
@@ -178,6 +222,18 @@
     </Compile>
     <Compile Include="PageApplication\PageAuthorization\Registration.xaml.cs">
       <DependentUpon>Registration.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageApplication\PageProfile.xaml.cs">
+      <DependentUpon>PageProfile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageApplication\PlacingOrderPage.xaml.cs">
+      <DependentUpon>PlacingOrderPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageApplication\ProductDescriptionPage.xaml.cs">
+      <DependentUpon>ProductDescriptionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageApplication\UserPage\MainUserPage.xaml.cs">
+      <DependentUpon>MainUserPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -213,7 +269,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="PageApplication\PageUser\" />
     <Folder Include="Picture\" />
   </ItemGroup>
   <ItemGroup>

@@ -21,10 +21,9 @@ namespace RealEstateAgency.ApplicationData
         {
         }
         private static ReaEntities _Context;
-
         public static ReaEntities GetContext()
         {
-            if(_Context == null) _Context = new ReaEntities();
+            if (_Context == null) _Context = new ReaEntities();
             return _Context;
         }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

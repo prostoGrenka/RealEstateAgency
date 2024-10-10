@@ -1,6 +1,7 @@
 ﻿using RealEstateAgency.ApplicationData;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Media.Media3D;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
@@ -60,6 +62,7 @@ namespace RealEstateAgency.PageApplication.PageAdmin
                         Adress = adress,
                         Price = price
                     };
+                    
                     AppConnect.modelOdb.RealtyFlat.Add(goods);
                     AppConnect.modelOdb.SaveChanges();
                     MessageBox.Show("данные добавлены!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
