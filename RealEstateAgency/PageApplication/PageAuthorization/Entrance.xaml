@@ -9,7 +9,7 @@
       Title="Entrance">
 
     <Grid>
-        <Grid Margin="93,50,93,50">
+        <Grid Margin="93,50,93,10">
             <StackPanel Margin="109,30,166,15">
 
                 <Label Margin="10" Padding="10" Height="38" Width="262" Content="Логин"></Label>

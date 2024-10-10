@@ -125,6 +125,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PageApplication\PageAdmin\AdminPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PageApplication\PageAuthorization\Entrance.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -137,6 +141,9 @@
   <ItemGroup>
     <Compile Include="PageApplication\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageApplication\PageAdmin\AdminPage.xaml.cs">
+      <DependentUpon>AdminPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="PageApplication\PageAuthorization\Entrance.xaml.cs">
       <DependentUpon>Entrance.xaml</DependentUpon>
@@ -178,7 +185,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="PageApplication\PageAdmin\" />
     <Folder Include="PageApplication\PageUser\" />
     <Folder Include="Picture\" />
   </ItemGroup>
