@@ -9,41 +9,41 @@
       Title="PageEditData">
 
     <Grid>
-        <ComboBox SelectedItem="{Binding Category.Category1}" x:Name="categoryCombo" Margin="10,40,720,387"/>
-        <Label Content="Категория товара" Margin="10,10,720,415"/>
+        <ComboBox SelectedItem="{Binding Category.Category1}" x:Name="categoryCombo" Margin="10,40,720,525"/>
+        <Label Content="Категория товара" Margin="10,10,720,565"/>
 
-        <ComboBox SelectedItem="{Binding KindBunAndBagel.Kind}" x:Name="kindCombo" Margin="101,40,629,387"/>
-        <Label Content="Вид товара" Margin="101,10,629,415"/>
+        <ComboBox SelectedItem="{Binding KindBunAndBagel.Kind}" x:Name="kindCombo" Margin="10,110,720,450"/>
+        <Label Content="Вид товара" Margin="10,80,720,490"/>
 
-        <ComboBox SelectedItem="{Binding KindDough.KindDough1}" x:Name="doughCombo" Margin="188,40,542,387"/>
-        <Label Content="Вид теста" Margin="188,10,542,415"/>
+        <ComboBox SelectedItem="{Binding KindDough.KindDough1}" x:Name="doughCombo" Margin="10,185,720,385"/>
+        <Label Content="Вид теста" Margin="10,155,720,415"/>
 
-        <TextBox Text ="{Binding Name}" x:Name="nameBox" Margin="101,101,629,324" />
-        <Label Content="Название товара" Margin="101,73,629,352"/>
+        <TextBox Text ="{Binding Name}" x:Name="nameBox" Margin="10,265,720,300" />
+        <Label Content="Название товара" Margin="10,232,720,338"/>
 
-        <ComboBox SelectedItem = "{Binding Filling.Filling1}" x:Name="fillingCombo" Margin="188,99,542,328"/>
-        <Label Content="Начинка" Margin="188,73,542,352"/>
+        <ComboBox SelectedItem = "{Binding Filling.Filling1}" x:Name="fillingCombo" Margin="224,40,501,525"/>
+        <Label Content="Начинка" Margin="224,10,501,560"/>
 
-        <ComboBox SelectedItem= "{Binding Cook.Name}" x:Name="cookCombo" Margin="279,98,451,329"/>
-        <Label Content="Повар" Margin="279,73,451,352"/>
+        <ComboBox SelectedItem= "{Binding Cook.Name}" x:Name="cookCombo" Margin="224,110,501,450"/>
+        <Label Content="Повар" Margin="224,80,501,490"/>
 
-        <TextBox Text ="{Binding Price}"  x:Name="priceBox" Margin="279,40,451,387" PreviewKeyDown="textBox_PreviewKeyDown"/>
-        <Label Content="Ценник товара" Margin="279,10,451,415"/>
+        <TextBox Text ="{Binding Price}"  x:Name="priceBox" Margin="224,185,501,385" PreviewKeyDown="textBox_PreviewKeyDown"/>
+        <Label Content="Ценник товара" Margin="224,155,501,415"/>
 
-        <TextBox Text="{Binding Weight}" PreviewKeyDown="textBox_PreviewKeyDown" x:Name ="weightBox" Margin="365,40,365,387"/>
-        <Label Content="Вес товара" Margin="365,15,365,410"/>
+        <TextBox Text="{Binding Weight}" PreviewKeyDown="textBox_PreviewKeyDown" x:Name ="weightBox" Margin="224,265,501,300"/>
+        <Label Content="Вес товара" Margin="224,235,531,335"/>
 
-        <TextBox Text="{Binding Photo}" x:Name="photoBox" Margin="365,99,365,328"/>
-        <Label Content="Фотография товара" Margin="365,74,365,351"/>
+        <TextBox Text="{Binding Photo}" x:Name="photoBox" Margin="694,265,20,300"/>
+        <Label Content="Фотография товара" Margin="434,265,231,300"/>
 
-        <TextBox Text="{Binding Quantity}" x:Name ="quantityBox" Margin="10,103,720,324" PreviewKeyDown="textBox_PreviewKeyDown"/>
-        <Label Content="Кол-во товара" Margin="10,73,720,352"/>
+        <TextBox Text="{Binding Quantity}" x:Name ="quantityBox" Margin="105,360,560,205" PreviewKeyDown="textBox_PreviewKeyDown"/>
+        <Label Content="Кол-во товара" Margin="105,330,560,240"/>
 
         <Image x:Name="imgData" Margin="446,20,18,344"></Image>
 
-        <Button Content="Назад" x:Name="btnBack" Margin="354,178,376,249" Click="btnBack_Click" Background="SandyBrown"/>
-        <Button Content="Сохранить" x:Name="btnSave" Margin="10,178,720,249" Click="btnSave_Click" Background="SandyBrown"/>
-        <Button Content="Очистить" x:Name="btnClear" Margin="279,178,451,249" Background="SandyBrown"/>
+        <Button Content="Назад" x:Name="btnBack" Margin="715,450,38,100" Click="btnBack_Click" Background="SandyBrown"/>
+        <Button Content="Сохранить" x:Name="btnSave" Margin="371,450,382,100" Click="btnSave_Click" Background="SandyBrown"/>
+        <Button Content="Очистить" x:Name="btnClear" Margin="543,450,210,100" Background="SandyBrown"/>
 
     </Grid>
 </Page>

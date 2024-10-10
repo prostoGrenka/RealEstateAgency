@@ -22,9 +22,10 @@ namespace RealEstateAgency.PageApplication.PageAdmin
     public partial class PageEditData : Page
     {
         private RealtyFlat _editgoods = new RealtyFlat();
-        public PageEditData(RealtyFlat selectedP)
+        public PageEditData (RealtyFlat selectedP)
         {
             InitializeComponent();
+
 
             if (selectedP != null)
             {
@@ -35,11 +36,12 @@ namespace RealEstateAgency.PageApplication.PageAdmin
 
             DataContext = _editgoods;
             categoryCombo.ItemsSource = ReaEntities.GetContext().Destiny.Select(x => x.Destiny1).ToList();
-            kindCombo.ItemsSource = ReaEntities.GetContext().Floor.Select(x => x.Floor1).ToList();
-            doughCombo.ItemsSource = ReaEntities.GetContext().QuantityRoom.Select(x => x.QuantityRoom1).ToList();
-            fillingCombo.ItemsSource = ReaEntities.GetContext().Client.Select(x => x.NumberContract).ToList();
-            cookCombo.ItemsSource = ReaEntities.GetContext().AdressPhoto.Select(x => x.AdressPhoto1).ToList();
+            kindCombo.ItemsSource = ReaEntities.GetContext().Destiny.Select(x => x.Destiny1).ToList();
+            doughCombo.ItemsSource = ReaEntities.GetContext().Destiny.Select(x => x.Destiny1).ToList();
+            fillingCombo.ItemsSource = ReaEntities.GetContext().Destiny.Select(x => x.Destiny1).ToList();
+            cookCombo.ItemsSource = ReaEntities.GetContext().Destiny.Select(x => x.Destiny1).ToList();
         }
+
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
             StringBuilder errors = new StringBuilder();
@@ -95,6 +97,7 @@ namespace RealEstateAgency.PageApplication.PageAdmin
                 MessageBox.Show(ex.Message.ToString());
             }
             AppFrame.FrmMain.Navigate(new MainWindow());
+
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
@@ -125,3 +128,4 @@ namespace RealEstateAgency.PageApplication.PageAdmin
         }
     }
 }
+
