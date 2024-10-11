@@ -56,7 +56,7 @@
         <StackPanel Orientation="Horizontal" Margin="15,390,0,0" >
             <Button x:Name="btnAdd" Content="Добавить недвижимость" Click="btnAdd_Click" Height="40" Width="156" Background="PowderBlue"/>
             <Separator Width="15"/>
-            <Button x:Name="btnAddClient" Content="Добавить клиента" Height="39" Background="PowderBlue" Width="127"/>
+            <Button x:Name="btnAddClient" Content="Добавить клиента" Height="39" Background="PowderBlue" Width="127" Click="btnAddClient_Click"/>
             <Separator Width="15"/>
             <Button x:Name="btnDelete" Content="Удалить" Click="btnDelete_Click" Background="PowderBlue" Width="149" Height="41"/>
             <Separator Width="151"/>

@@ -145,10 +145,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PageApplication\PageAdmin\PageAllUsers.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="PageApplication\PageAdmin\PageEditData.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -204,9 +200,6 @@
     </Compile>
     <Compile Include="PageApplication\PageAdmin\PageAddUser.xaml.cs">
       <DependentUpon>PageAddUser.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="PageApplication\PageAdmin\PageAllUsers.xaml.cs">
-      <DependentUpon>PageAllUsers.xaml</DependentUpon>
     </Compile>
     <Compile Include="PageApplication\PageAdmin\PageEditData.xaml.cs">
       <DependentUpon>PageEditData.xaml</DependentUpon>

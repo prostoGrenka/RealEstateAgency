@@ -128,5 +128,10 @@ namespace RealEstateAgency.PageApplication.PageAdmin
             FiltreWindow windowForGetFiltre = new FiltreWindow();
             windowForGetFiltre.ShowDialog();
         }
+
+        private void btnAddClient_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

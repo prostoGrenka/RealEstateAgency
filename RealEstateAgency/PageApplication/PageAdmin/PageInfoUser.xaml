@@ -5,10 +5,36 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:RealEstateAgency.PageApplication.PageAdmin"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      Height="450" Width="892"
       Title="PageInfoUser">
 
     <Grid>
-        
+        <ListView x:Name="ListUsers" ScrollViewer.CanContentScroll="False" Background="SandyBrown" Margin="0,38,20,48" d:ItemsSource="{d:SampleData ItemCount=5}" FontSize="18" FontFamily="Bahnschrift SemiBold" SelectionChanged="ListOrders_SelectionChanged">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Width="718" Height="163">
+                        <Image Source="{Binding beautyGoods.CurrentPhoto}" Grid.Column="0" Margin="-27,13,535,14"/>
+                        <TextBlock Width="auto" TextWrapping="Wrap" Height="auto" Margin="151,13,419,116"><Run Text="Логин: "/><Run Text=" "/><Run Text="{Binding User.Login}"/></TextBlock>
+                        <TextBlock Width="auto" TextWrapping="Wrap" Height="auto" Margin="151,88,419,45"><Run Text="ФИО: "/><Run Text=" "/><Run Text="{Binding Client.FirstName}"/></TextBlock>
+                        <TextBlock Width="auto" TextWrapping="Wrap" Height="auto" Margin="151,123,332,14"><Run Text="Телефон: "/><Run Text=" "/><Run Text="{Binding Client.PhoneNumber}"/></TextBlock>
+                        <TextBlock Width="auto" TextWrapping="Wrap" Height="auto" Margin="151,52,384,69"><Run Text="Пароль: "/><Run Text=" "/><Run Text="{Binding User.Password}"/></TextBlock>
+                        <TextBlock Width="auto" TextWrapping="Wrap" Height="auto" Margin="385,73,185,48"><Run Text="Роль: "/><Run Text=" "/><Run Text="{Binding Role.Role1}"/></TextBlock>
+                        <Button x:Name="btnDel" Content="Удалить" HorizontalAlignment="Left" Margin="570,77,0,60" Width="138" RenderTransformOrigin="0.5,0.5" Background="SandyBrown" Click="btnDel_Click"/>
+                        <Button x:Name="btnInfo" Content="Подробнее" HorizontalAlignment="Left" Margin="570,100,0,37" Width="138" RenderTransformOrigin="0.5,0.5" Background="SandyBrown"/>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Button x:Name="btnAddUsers" Content="Создать нового пользователя" Margin="10,407,691,0" Background="RosyBrown" Click="btnAddUsers_Click"></Button>
+        <Button x:Name="btnEditUser" Content="Редактировать пользователя" Margin="206,407,503,1" Background="RosyBrown" Click="btnEditUser_Click"></Button>
+
+        <TextBlock Margin="222,2,479,495"></TextBlock>
+        <Button x:Name="btnSearh" Content="Найти" Margin="749,13,20,417" Background="RosyBrown"/>
+
+        <Button x:Name="btnBack" Content="Назад" Margin="767,407,20,3" Background="RosyBrown" Click="btnBack_Click"/>
+
+        <TextBlock x:Name="tbCounter" Margin="10,14,754,418"></TextBlock>
+        <ComboBox x:Name="comboSort" Margin="593,13,148,417"/>
     </Grid>
 </Page>
