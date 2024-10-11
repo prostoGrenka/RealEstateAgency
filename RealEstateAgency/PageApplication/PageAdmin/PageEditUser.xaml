@@ -5,50 +5,25 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:RealEstateAgency.PageApplication.PageAdmin"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      Height="450" Width="892" 
       Title="PageEditUser">
 
     <Grid>
-        <Image Margin="42,72,392,320"></Image>
-        <Button x:Name ="btnAddImage" Content="Добавить" Margin="156,285,506,285" Background="SandyBrown" Click="btnAddImage_Click"></Button>
+        <ComboBox x:Name="roleCombo" Margin="427,116,281,304"/>
+        <Label Content="Вид недвижимости" Margin="427,77,281,340"/>
 
-        <Label Content="Редактирование пользователя" Margin="225,10,178,542" FontSize="26"/>
+        <TextBox x:Name="loginTbox" Margin="191,114,523,307"/>
+        <Label Content="Логин" Margin="191,74,484,340"/>
 
-        <StackPanel Margin="400,74,19,137" Orientation="Horizontal">
+        <TextBox x:Name ="passBox" Margin="191,187,523,233"/>
+        <Label Content="Пароль" Margin="191,153,484,263"/>
 
-            <StackPanel Width="190" Height="354">
-                <Label Content="Логин" HorizontalAlignment="Center" Margin="5" Height="24" Width="134" />
-                <TextBox x:Name="txbLogin" Text ="{Binding User.Login}" HorizontalAlignment="Center" Margin="5" Width="137" Height="35" Background="RosyBrown"/>
+        <PasswordBox x:Name="passRepeatBox" Margin="191,269,523,151"/>
+        <Label Content="Павтор пароля" Margin="191,225,484,187"/>
 
-                <Label Content="Пароль" HorizontalAlignment="Center" Margin="5" Height="24" Width="134"/>
-                <TextBox x:Name="txbPass" Text="{Binding User.Password}" HorizontalAlignment="Center" Margin="5" Width="137" Height="35" Background="RosyBrown"/>
+        <Button Content="Сохранить" x:Name="btnSave" Margin="10,397,723,25" Click="btnSave_Click"/>
+        <Button Content="Назад" x:Name="btnBack" Margin="726,402,10,20" Click="btnBack_Click"/>
+        <Button Content="Очистить" x:Name="btnClear" Margin="581,402,171,20" Click="btnClear_Click" RenderTransformOrigin="0.469,0.156"/>
 
-                <Label Content="Повтор пароля" HorizontalAlignment="Center" Margin="5" Height="24" Width="134"/>
-                <TextBox x:Name="psbPass" Text="{Binding User.Password}" HorizontalAlignment="Center" Margin="5" Width="137" Height="35" Background="RosyBrown"/>
-
-                <Label Content="Почта" HorizontalAlignment="Center" Margin="5" Height="24" Width="134"/>
-                <TextBox Text="{Binding Email}" FontSize="12" x:Name="txbEmail" HorizontalAlignment="Center" Margin="5" Width="137" Height="35"  Background="RosyBrown"/>
-
-                <Button x:Name="btnSave" Height="25" Width="140" Margin="10" Content="Зарегистрироваться" Click="btnSave_Click" Background="SandyBrown"/>
-            </StackPanel>
-            <StackPanel Width="188" Height="354">
-                <Label Content="Имя" HorizontalAlignment="Center" Margin="5" Height="24" Width="135"/>
-                <TextBox Text="{Binding User.Name}" FontSize="12" x:Name="txbName" HorizontalAlignment="Center" Margin="5" Width="137" Height="35" Background="RosyBrown"/>
-
-                <Label Content="Фамилия" HorizontalAlignment="Center" Margin="5" Height="24" Width="135"/>
-                <TextBox Text="{Binding User.LastName}" FontSize="12" x:Name="txbLastName" HorizontalAlignment="Center" Margin="5" Width="137" Height="35" Background="RosyBrown"/>
-
-                <Label Content="Номер телефона" HorizontalAlignment="Center" Margin="5" Height="24" Width="135"/>
-                <TextBox Text="{Binding User.Phone}" FontSize="12" x:Name="txbNumberPhone" HorizontalAlignment="Center" Margin="5" Width="137" Height="35" Background="RosyBrown"/>
-
-                <Label Content="Адресс" HorizontalAlignment="Center" Margin="5" Height="24" Width="135"/>
-                <Button x:Name="Back" Height="37" Width="140" Content="Назад" Click="btnBack_Click" Background="SandyBrown"/>
-                <TextBox Text="{Binding User.Adrees}" FontSize="12" x:Name="txbAdress" HorizontalAlignment="Center" Margin="5" Width="137" Height="35" Background="RosyBrown"/>
-
-            </StackPanel>
-        </StackPanel>
-        <Label Content="Роль пользователя" Margin="252,340,405,226"/>
-        <ComboBox x:Name="roleCombo" Margin="257,270,400,150" Background="RosyBrown" RenderTransformOrigin="0.5,0.5"/>
-        <Button x:Name="btnClear" Content="Очистить всё" Margin="252,410,405,10" Background="SandyBrown" Click="btnClear_Click"></Button>
     </Grid>
 </Page>

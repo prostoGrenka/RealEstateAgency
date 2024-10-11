@@ -21,7 +21,8 @@ namespace RealEstateAgency.PageApplication.PageAdmin
     /// </summary>
     public partial class PageEditUser : Page
     {
-        public PageEditUser()
+        private User _editUser = new User();
+        public PageEditUser(User selectedUser)
         {
 
             InitializeComponent();
@@ -37,41 +38,21 @@ namespace RealEstateAgency.PageApplication.PageAdmin
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
             StringBuilder errors = new StringBuilder();
-            if (string.IsNullOrEmpty(_editUser.Name))
+            if (string.IsNullOrEmpty(_editUser.Login))
             {
-                errors.AppendLine("Введите название");
+                errors.AppendLine("Введите логин");
             }
-            else if (txbLogin.Text == "")
+            else if (loginTbox.Text == "")
             {
-                MessageBox.Show("Введите значение 'Категория'!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Error); return;
+                MessageBox.Show("Заполните поле пароль", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Error); return;
             }
-            if (txbName.Text == "")
+            if (passBox.Text == "")
             {
-                MessageBox.Show("Введите значение 'Вид выпечки'!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Error); return;
+                MessageBox.Show("Заполните поле, пароля", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Error); return;
             }
-            else if (txbLastName.Text == "")
+            else if (passRepeatBox.Password == "")
             {
-                MessageBox.Show("Введите значение 'Вид теста'!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Error); return;
-            }
-            else if (txbLogin.Text == "")
-            {
-                MessageBox.Show("Введите значение 'Начинка'!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Error); return;
-            }
-            else if (txbEmail.Text == "")
-            {
-                MessageBox.Show("Введите значение 'Повар'!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Error); return;
-            }
-            else if (txbNumberPhone.Text == "")
-            {
-                MessageBox.Show("Введите значение 'Цена'!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Error); return;
-            }
-            else if (txbAdress.Text == "")
-            {
-                MessageBox.Show("Введите значение 'Вес'!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Error); return;
-            }
-            else if (Convert.ToString(roleCombo.ItemsSource) == "")
-            {
-                MessageBox.Show("Введите значение 'Вес'!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Error); return;
+                MessageBox.Show("Заполните поле павтора пароля", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Error); return;
             }
 
             if (errors.Length > 0)
@@ -85,26 +66,22 @@ namespace RealEstateAgency.PageApplication.PageAdmin
             }
             try
             {
-                BunAndBagelEntities.GetContext().SaveChanges();
+                ReaEntities.GetContext().SaveChanges();
                 MessageBox.Show("Данные успешно изменены!");
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message.ToString());
             }
-            AppFrame.FrmMain.Navigate(new Main());
+            AppFrame.FrmMain.Navigate(new AdminPage());
 
         }
         private void btnClear_Click(object sender, RoutedEventArgs e)
         {
             roleCombo.SelectedIndex = -1;
-            txbLogin.Clear();
-            txbName.Clear();
-            txbLastName.Clear();
-            txbLogin.Clear();
-            txbEmail.Clear();
-            txbNumberPhone.Clear();
-            txbAdress.Clear();
+            loginTbox.Clear();
+            passBox.Clear();
+            passRepeatBox.Clear();
         }
 
         private void textBox_PreviewKeyDown(object sender, KeyEventArgs e)
@@ -119,13 +96,26 @@ namespace RealEstateAgency.PageApplication.PageAdmin
         {
             AppFrame.FrmMain.Navigate(new AdminPage());
         }
+        private void PasswordBox_PasswordChange(object sender, RoutedEventArgs e)
+        {
+            if (passRepeatBox.Password != passBox.Text)
+            {
+                btnSave.IsEnabled = false;
+                passBox.Background = Brushes.LightCoral;
+                passRepeatBox.Background = Brushes.Red;
+            }
+            else
+            {
+                btnSave.IsEnabled = true;
+                passBox.Background = Brushes.LightGreen;
+                passRepeatBox.Background = Brushes.Green;
+            }
+        }
 
         private void btnAddImage_Click(object sender, RoutedEventArgs e)
         {
 
         }
-
-
     }
 }
 

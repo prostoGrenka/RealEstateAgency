@@ -28,9 +28,9 @@ namespace RealEstateAgency.PageApplication.PageAdmin
 
         }
 
-        private void RegBtn_Click(object sender, RoutedEventArgs e)
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            if (AppConnect.modelOdb.User.Count(x => x.Login == txbLogin.Text) > 0)
+            if (AppConnect.modelOdb.User.Count(x => x.Login == loginTbox.Text) > 0)
             {
                 MessageBox.Show("Пользователь с таки логином уже есть!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
                 return;
@@ -39,8 +39,8 @@ namespace RealEstateAgency.PageApplication.PageAdmin
             {
                 User user = new User()
                 {
-                    Login = txbLogin.Text,
-                    Password = psbPass.Password,
+                    Login = loginTbox.Text,
+                    Password = passRepeatBox.Password,
                     IdRole = roleCombo.SelectedIndex + 1,
                 };
                 AppConnect.modelOdb.User.Add(user);
@@ -58,21 +58,21 @@ namespace RealEstateAgency.PageApplication.PageAdmin
         }
         private void PasswordBox_PasswordChange(object sender, RoutedEventArgs e)
         {
-            if (psbPass.Password != txbPass.Text)
+            if (passRepeatBox.Password != passBox.Text)
             {
-                RegBtn.IsEnabled = false;
-                psbPass.Background = Brushes.LightCoral;
-                psbPass.Background = Brushes.Red;
+                btnAdd.IsEnabled = false;
+                passBox.Background = Brushes.LightCoral;
+                passRepeatBox.Background = Brushes.Red;
             }
             else
             {
-                RegBtn.IsEnabled = true;
-                psbPass.Background = Brushes.LightGreen;
-                psbPass.Background = Brushes.Green;
+                btnAdd.IsEnabled = true;
+                passBox.Background = Brushes.LightGreen;
+                passRepeatBox.Background = Brushes.Green;
             }
         }
 
-        private void Back_Click(object sender, RoutedEventArgs e)
+        private void btnBack_Click(object sender, RoutedEventArgs e)
         {
             AppFrame.FrmMain.Navigate(new PageInfoUser());
         }
@@ -80,8 +80,14 @@ namespace RealEstateAgency.PageApplication.PageAdmin
         private void btnClear_Click(object sender, RoutedEventArgs e)
         {
             roleCombo.SelectedIndex = -1;
-            txbLogin.Clear();
-            txbLogin.Clear();
+            loginTbox.Clear();
+            passBox.Clear();
+            passRepeatBox.Clear();
+        }
+
+        private void passBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

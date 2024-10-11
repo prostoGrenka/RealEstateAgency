@@ -43,7 +43,7 @@ namespace RealEstateAgency.PageApplication.PageAdmin
 
         private void btnEditUser_Click(object sender, RoutedEventArgs e)
         {
-            AppFrame.FrmMain.Navigate(new PageEditUser());
+            AppFrame.FrmMain.Navigate(new PageEditUser((sender as Button).DataContext as User));
         }
 
         private void btnDel_Click(object sender, RoutedEventArgs e)

@@ -9,33 +9,33 @@
       Title="PageAddData" Height="450" Width="892">
 
     <Grid>
-        <ComboBox x:Name="destinyCombo" Margin="10,40,689,387"/>
-        <Label Content="Вид недвижимости" Margin="10,10,689,415"/>
+        <ComboBox x:Name="destinyCombo" Margin="10,49,642,371"/>
+        <Label Content="Вид недвижимости" Margin="10,10,706,407"/>
 
-        <ComboBox x:Name="quantityRoomCombo" Margin="10,97,690,330"/>
-        <Label Content="Кол-во комнат" Margin="10,68,689,358"/>
+        <ComboBox x:Name="quantityRoomCombo" Margin="10,123,642,297"/>
+        <Label Content="Кол-во комнат" Margin="10,85,706,333"/>
 
-        <ComboBox x:Name="floorCombo" Margin="9,220,690,207"/>
-        <Label Content="Этаж" Margin="11,188,690,235"/>
+        <ComboBox x:Name="floorCombo" Margin="10,270,642,150"/>
+        <Label Content="Этаж" Margin="11,241,706,185"/>
 
-        <ComboBox x:Name="clientCombo" Margin="11,160,689,267"/>
-        <Label Content="Номер договора" Margin="10,130,690,295"/>
+        <ComboBox x:Name="clientCombo" Margin="11,205,642,215"/>
+        <Label Content="Номер договора" Margin="10,166,706,251"/>
 
-        <TextBox x:Name="priceBox" Margin="154,41,560,387" PreviewKeyDown="textBox_PreviewKeyDown"/>
-        <Label Content="Цена" Margin="154,13,560,409"/>
+        <TextBox x:Name="priceBox" Margin="221,50,446,371" PreviewKeyDown="textBox_PreviewKeyDown"/>
+        <Label Content="Цена" Margin="221,10,490,404"/>
 
-        <TextBox x:Name ="squareFlatBox" Margin="154,97,560,330" PreviewKeyDown="textBox_PreviewKeyDown"/>
-        <Label Content="Площадь квартиры" Margin="157,71,560,353"/>
+        <TextBox x:Name ="squareFlatBox" Margin="221,123,446,297" PreviewKeyDown="textBox_PreviewKeyDown"/>
+        <Label Content="Площадь квартиры" Margin="221,89,490,327"/>
 
-        <TextBox x:Name="adressBox" Margin="154,160,560,267"/>
-        <Label Content="Адресс" Margin="154,126,560,290"/>
+        <TextBox x:Name="adressBox" Margin="221,205,446,215"/>
+        <Label Content="Адресс" Margin="221,161,490,251"/>
 
         <TextBox x:Name ="photoBox" Margin="538,211,28,211" Text="Здесь будет кнопка загрузки картинок" PreviewKeyDown="textBox_PreviewKeyDown"/>
 
         <Image x:Name="imgData" Margin="440,22,24,254"></Image>
-        <Button Content="Добавить" x:Name="btnAdd" Margin="10,412,661,10" Click="btnAdd_Click"/>
-        <Button Content="Назад" x:Name="btnBack" Margin="685,407,10,15" Click="btnBack_Click"/>
-        <Button Content="Очистить" x:Name="btnClear" Margin="575,407,120,15" Click="btnClear_Click" RenderTransformOrigin="0.469,0.156"/>
+        <Button Content="Добавить" x:Name="btnAdd" Margin="20,407,651,15" Click="btnAdd_Click"/>
+        <Button Content="Назад" x:Name="btnBack" Margin="712,407,10,15" Click="btnBack_Click"/>
+        <Button Content="Очистить" x:Name="btnClear" Margin="616,407,93,15" Click="btnClear_Click" RenderTransformOrigin="0.469,0.156"/>
 
     </Grid>
 </Page>

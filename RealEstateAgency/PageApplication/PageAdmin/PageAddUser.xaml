@@ -6,47 +6,23 @@
       xmlns:local="clr-namespace:RealEstateAgency.PageApplication.PageAdmin"
       mc:Ignorable="d" 
       Height="450" Width="892" 
-Title="PageAddUser">
-    
+      Title="PageAddUser">
+
     <Grid>
-        <Label Content="Создание пользователя" Margin="252,-6,245,552" FontSize="26"/>
+        <ComboBox x:Name="roleCombo" Margin="435,116,281,304"/>
+        <Label Content="Вид недвижимости" Margin="435,77,281,340"/>
 
-        <StackPanel Margin="400,53,19,152" Orientation="Horizontal">
+        <TextBox x:Name="loginTbox" Margin="227,114,484,307"/>
+        <Label Content="Логин" Margin="227,74,484,340"/>
 
-            <StackPanel Width="190" Height="354">
-                <Label Content="Логин" HorizontalAlignment="Center" Margin="5" Height="24" Width="134" />
-                <TextBox x:Name="txbLogin" HorizontalAlignment="Center" Margin="5" Width="137" Height="35" Background="RosyBrown"/>
+        <TextBox x:Name ="passBox" Margin="227,187,484,233" TextChanged="passBox_TextChanged"/>
+        <Label Content="Пароль" Margin="227,153,484,263"/>
+        <PasswordBox x:Name="passRepeatBox" Margin="227,269,484,151"/>
+        <Label Content="Павтор пароля" Margin="227,225,484,187"/>
+        
+        <Button Content="Добавить" x:Name="btnAdd" Margin="10,402,661,20" Click="btnAdd_Click"/>
+        <Button Content="Назад" x:Name="btnBack" Margin="725,407,10,15" Click="btnBack_Click"/>
+        <Button Content="Очистить" x:Name="btnClear" Margin="575,407,172,15" Click="btnClear_Click" RenderTransformOrigin="0.469,0.156"/>
 
-                <Label Content="Пароль" HorizontalAlignment="Center" Margin="5" Height="24" Width="134"/>
-                <TextBox x:Name="txbPass" HorizontalAlignment="Center" Margin="5" Width="137" Height="35" Background="RosyBrown"/>
-
-                <Label Content="Повтор пароля" HorizontalAlignment="Center" Margin="5" Height="24" Width="134"/>
-                <PasswordBox x:Name="psbPass" HorizontalAlignment="Center" Margin="5" Width="137" Height="35" Background="RosyBrown"/>
-
-                <Label Content="Почта" HorizontalAlignment="Center" Margin="5" Height="24" Width="134"/>
-                <TextBox Text="Не обязательно" FontSize="12" x:Name="txbEmail" HorizontalAlignment="Center" Margin="5" Width="137" Height="35"  Background="RosyBrown"/>
-
-                <Button x:Name="RegBtn" Height="29" Width="140" Margin="10" Content="Зарегистрироваться" Click="RegBtn_Click" Background="SandyBrown"/>
-            </StackPanel>
-            <StackPanel Width="188" Height="354">
-                <Label Content="Имя" HorizontalAlignment="Center" Margin="5" Height="24" Width="135"/>
-                <TextBox Text="Не обязательно" FontSize="12" x:Name="txbName" HorizontalAlignment="Center" Margin="5" Width="137" Height="35" Background="RosyBrown"/>
-
-                <Label Content="Фамилия" HorizontalAlignment="Center" Margin="5" Height="24" Width="135"/>
-                <TextBox Text="Не обязательно" FontSize="12" x:Name="txbLastName" HorizontalAlignment="Center" Margin="5" Width="137" Height="35" Background="RosyBrown"/>
-
-                <Label Content="Номер телефона" HorizontalAlignment="Center" Margin="5" Height="24" Width="135"/>
-                <TextBox Text="Не обязательно" FontSize="12" x:Name="txbNumberPhone" HorizontalAlignment="Center" Margin="5" Width="137" Height="35" Background="RosyBrown"/>
-
-                <Label Content="Адресс" HorizontalAlignment="Center" Margin="5" Height="24" Width="135"/>
-                <TextBox Text="Не обязательно" FontSize="12" x:Name="txbAdress" HorizontalAlignment="Center" Margin="5" Width="137" Height="35" Background="RosyBrown"/>
-
-                <Button x:Name="Back" HorizontalAlignment="Center" Height="25" Width="140" Margin="10" Content="Назад" Click="Back_Click" Background="SandyBrown"/>
-
-            </StackPanel>
-        </StackPanel>
-        <Label Content="Роль пользователя" Margin="257,324,400,242"/>
-        <ComboBox x:Name="roleCombo" Margin="257,363,400,207" Background="RosyBrown"/>
-        <Button x:Name="btnClear" Content="Очистить всё" Margin="257,398,400,173" Background="SandyBrown" Click="btnClear_Click"></Button>
     </Grid>
 </Page>

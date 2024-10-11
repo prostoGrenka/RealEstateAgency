@@ -35,11 +35,10 @@ namespace RealEstateAgency.PageApplication.PageAdmin
 
 
             DataContext = _editgoods;
-            categoryCombo.ItemsSource = ReaEntities.GetContext().Destiny.Select(x => x.Destiny1).ToList();
-            kindCombo.ItemsSource = ReaEntities.GetContext().Destiny.Select(x => x.Destiny1).ToList();
-            doughCombo.ItemsSource = ReaEntities.GetContext().Destiny.Select(x => x.Destiny1).ToList();
-            fillingCombo.ItemsSource = ReaEntities.GetContext().Destiny.Select(x => x.Destiny1).ToList();
-            cookCombo.ItemsSource = ReaEntities.GetContext().Destiny.Select(x => x.Destiny1).ToList();
+            destinyCombo.ItemsSource = ReaEntities.GetContext().Destiny.Select(x => x.Destiny1).ToList();
+            quantityRoomCombo.ItemsSource = ReaEntities.GetContext().QuantityRoom.Select(x => x.QuantityRoom1).ToList();
+            floorCombo.ItemsSource = ReaEntities.GetContext().Floor.Select(x => x.Floor1).ToList();
+            clientCombo.ItemsSource = ReaEntities.GetContext().Client.Select(x => x.NumberContract).ToList();
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
@@ -49,23 +48,23 @@ namespace RealEstateAgency.PageApplication.PageAdmin
             {
                 errors.AppendLine("Введите название");
             }
-            else if (categoryCombo.Text == "")
+            else if (destinyCombo.Text == "")
             {
                 MessageBox.Show("Введите значение 'Категория'!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Error); return;
             }
-            if (kindCombo.Text == "")
+            if (quantityRoomCombo.Text == "")
             {
                 MessageBox.Show("Введите значение 'Вид выпечки'!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Error); return;
             }
-            else if (doughCombo.Text == "")
+            else if (floorCombo.Text == "")
             {
                 MessageBox.Show("Введите значение 'Вид теста'!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Error); return;
             }
-            else if (fillingCombo.Text == "")
+            else if (clientCombo.Text == "")
             {
                 MessageBox.Show("Введите значение 'Начинка'!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Error); return;
             }
-            else if (cookCombo.Text == "")
+            else if (priceBox.Text == "")
             {
                 MessageBox.Show("Введите значение 'Повар'!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Error); return;
             }
@@ -73,7 +72,7 @@ namespace RealEstateAgency.PageApplication.PageAdmin
             {
                 MessageBox.Show("Введите значение 'Цена'!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Error); return;
             }
-            else if (weightBox.Text == "")
+            else if (squareFlatBox.Text == "")
             {
                 MessageBox.Show("Введите значение 'Вес'!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Error); return;
             }
@@ -107,16 +106,13 @@ namespace RealEstateAgency.PageApplication.PageAdmin
 
         private void btnClear_Click(object sender, RoutedEventArgs e)
         {
-            categoryCombo.SelectedIndex = -1;
-            kindCombo.SelectedIndex = -1;
-            doughCombo.SelectedIndex = -1;
-            fillingCombo.SelectedIndex = -1;
-            cookCombo.SelectedIndex = -1;
-            nameBox.Clear();
+            destinyCombo.SelectedIndex = -1;
+            quantityRoomCombo.SelectedIndex = -1;
+            floorCombo.SelectedIndex = -1;
+            clientCombo.SelectedIndex = -1;
             priceBox.Clear();
-            weightBox.Clear();
-            quantityBox.Clear();
-            photoBox.Clear();
+            squareFlatBox.Clear();
+            adressBox.Clear();
         }
 
         private void textBox_PreviewKeyDown(object sender, KeyEventArgs e)
